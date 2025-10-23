@@ -5,6 +5,9 @@ import { useEffect, useState } from 'react';
 import { OpenFoodFactsProduct } from '../types';
 import styles from './product.module.css';
 
+// Force dynamic rendering for this route
+export const dynamic = 'force-dynamic';
+
 export default function ProductPage() {
   const params = useParams();
   const router = useRouter();

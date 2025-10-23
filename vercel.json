@@ -3,6 +3,12 @@
   "devCommand": "pnpm dev",
   "installCommand": "pnpm install",
   "framework": "nextjs",
-  "regions": ["iad1"]
+  "regions": ["iad1"],
+  "rewrites": [
+    {
+      "source": "/product/:barcode",
+      "destination": "/product/:barcode"
+    }
+  ]
 }
 

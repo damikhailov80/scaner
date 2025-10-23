@@ -87,13 +87,36 @@ export default function BarcodeScanner() {
       await scannerRef.current.start(
         selectedCamera,
         config,
-        (decodedText) => {
+        async (decodedText) => {
+          console.log('Barcode scanned:', decodedText);
           setBarcode(decodedText);
-          stopScanning();
-          // Navigate to product page after a short delay
-          setTimeout(() => {
-            router.push(`/product/${decodedText}`);
-          }, 500);
+          
+          try {
+            await stopScanning();
+            console.log('Scanner stopped, navigating to product page');
+            
+            // Navigate to product page
+            const productUrl = `/product/${encodeURIComponent(decodedText)}`;
+            
+            // Try prefetch first
+            router.prefetch(productUrl);
+            
+            // Use setTimeout to ensure scanner is fully stopped
+            setTimeout(() => {
+              console.log('Attempting navigation to:', productUrl);
+              // Try router.push first, fallback to window.location if needed
+              try {
+                router.push(productUrl);
+              } catch (navError) {
+                console.error('Router navigation failed, using window.location:', navError);
+                window.location.href = productUrl;
+              }
+            }, 100);
+          } catch (error) {
+            console.error('Error during navigation:', error);
+            // Fallback to direct navigation
+            window.location.href = `/product/${encodeURIComponent(decodedText)}`;
+          }
         },
         () => {}
       );
