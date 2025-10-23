@@ -4,21 +4,26 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:https": "node server.js",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate-certs": "bash generate-certs.sh"
   },
   "dependencies": {
+    "@zxing/browser": "^0.1.5",
+    "@zxing/library": "^0.21.3",
+    "html5-qrcode": "^2.3.8",
+    "next": "16.0.0",
     "react": "19.2.0",
-    "react-dom": "19.2.0",
-    "next": "16.0.0"
+    "react-dom": "19.2.0"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.0.0"
+    "eslint-config-next": "16.0.0",
+    "typescript": "^5"
   }
 }

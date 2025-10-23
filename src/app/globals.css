@@ -1,13 +1,7 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html,
@@ -17,22 +11,43 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+  color: #333;
+  line-height: 1.6;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* Стили для html5-qrcode */
+#qr-reader {
+  width: 100% !important;
+}
+
+#qr-reader video {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+#qr-reader__dashboard_section {
+  display: none !important; /* Скрываем кнопки по умолчанию */
+}
+
+#qr-reader__scan_region {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 400px !important;
+}
+
+@media (max-width: 768px) {
+  #qr-reader__scan_region {
+    min-height: 300px !important;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

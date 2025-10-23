@@ -1,0 +1,268 @@
+.container {
+  min-height: 100vh;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: var(--font-geist-sans);
+}
+
+.loading, .error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  gap: 20px;
+}
+
+.loading {
+  font-size: 18px;
+  color: #666;
+}
+
+.error h2 {
+  color: #d32f2f;
+  margin-bottom: 10px;
+}
+
+.backButton {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: all 0.2s;
+}
+
+.backButton:hover {
+  background: #e0e0e0;
+}
+
+.productCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.imageContainer {
+  width: 100%;
+  max-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9f9f9;
+  padding: 20px;
+}
+
+.productImage {
+  max-width: 100%;
+  max-height: 380px;
+  object-fit: contain;
+}
+
+.header {
+  padding: 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.productName {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+  color: #1a1a1a;
+}
+
+.brand {
+  font-size: 18px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.quantity {
+  font-size: 16px;
+  color: #888;
+  margin: 5px 0;
+}
+
+.section {
+  padding: 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: #1a1a1a;
+}
+
+.barcode {
+  font-size: 18px;
+  font-family: 'Courier New', monospace;
+  color: #333;
+  background: #f5f5f5;
+  padding: 12px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.scores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.scoreLabel {
+  font-weight: 500;
+  color: #666;
+}
+
+.scoreBadge {
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  background: #e0e0e0;
+  color: #333;
+}
+
+/* Nutri-Score colors */
+.scoreBadge.nutriscore-a {
+  background: #038141;
+  color: white;
+}
+
+.scoreBadge.nutriscore-b {
+  background: #85bb2f;
+  color: white;
+}
+
+.scoreBadge.nutriscore-c {
+  background: #fecb02;
+  color: #333;
+}
+
+.scoreBadge.nutriscore-d {
+  background: #ee8100;
+  color: white;
+}
+
+.scoreBadge.nutriscore-e {
+  background: #e63e11;
+  color: white;
+}
+
+/* Eco-Score colors */
+.scoreBadge.ecoscore-a {
+  background: #1e8b4f;
+  color: white;
+}
+
+.scoreBadge.ecoscore-b {
+  background: #5cb85c;
+  color: white;
+}
+
+.scoreBadge.ecoscore-c {
+  background: #ffc107;
+  color: #333;
+}
+
+.scoreBadge.ecoscore-d {
+  background: #ff9800;
+  color: white;
+}
+
+.scoreBadge.ecoscore-e {
+  background: #f44336;
+  color: white;
+}
+
+.nutritionTable {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nutritionRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 6px;
+}
+
+.nutritionRow.indented {
+  margin-left: 20px;
+  background: #f0f0f0;
+}
+
+.nutritionLabel {
+  font-weight: 500;
+  color: #333;
+}
+
+.nutritionValue {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.ingredients, .allergens, .categories {
+  line-height: 1.6;
+  color: #444;
+  margin: 0;
+}
+
+.allergens {
+  color: #d32f2f;
+  font-weight: 500;
+}
+
+.button {
+  background: #0070f3;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.button:hover {
+  background: #0051cc;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  .productName {
+    font-size: 22px;
+  }
+
+  .section {
+    padding: 16px;
+  }
+
+  .nutritionRow {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
