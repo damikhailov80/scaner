@@ -1,0 +1,9 @@
+node_modules
+.next
+certificates
+*.log
+.env*.local
+generate-certs.sh
+server.js
+HTTPS-SETUP.md
+
